@@ -1,11 +1,10 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi import APIRouter, UploadFile, File, HTTPException
 from typing import List
 import os
 import uuid
 import shutil
 import logging
 from datetime import datetime
-from app.services.document_analyzer import DocumentAnalyzer
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -16,55 +15,27 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 # 메모리에 템플릿 저장 (추후 DB로 전환)
 templates_db = {}
 
-# 문서 분석 서비스
-analyzer = DocumentAnalyzer()
-
-async def analyze_template_background(template_id: str, file_path: str, file_type: str):
-    """백그라운드에서 템플릿 분석 수행"""
-    try:
-        logger.info(f"템플릿 분석 시작 - template_id: {template_id}, file_type: {file_type}")
-
-        # 상태 업데이트
-        if template_id in templates_db:
-            templates_db[template_id]["status"] = "analyzing"
-
-        # 문서 분석
-        analysis_result = await analyzer.analyze_document(file_path, file_type)
-        logger.info(f"템플릿 분석 완료 - template_id: {template_id}")
-
-        # 결과 저장
-        if template_id in templates_db:
-            templates_db[template_id]["analysis_result"] = analysis_result
-            templates_db[template_id]["status"] = "analyzed"
-
-    except Exception as e:
-        logger.exception(f"템플릿 분석 실패 - template_id: {template_id}, error: {str(e)}")
-        if template_id in templates_db:
-            templates_db[template_id]["status"] = "analysis_failed"
-            templates_db[template_id]["error"] = str(e)
-
 
 @router.post("/upload")
 async def upload_template(
-    background_tasks: BackgroundTasks,
     file: UploadFile = File(...)
 ):
     """
     템플릿 파일 업로드
-    - 워드(.docx) 또는 한글(.hwp) 파일 업로드
+    - 워드(.doc, .docx) 파일 업로드
     - 파일 이름을 템플릿 이름으로 자동 사용
-    - 자동으로 분석 시작
+    - 분석 없이 바로 변환 가능
     """
     try:
         logger.info(f"템플릿 업로드 요청 - filename: {file.filename}")
 
         # 파일 확장자 검증
         file_ext = os.path.splitext(file.filename)[1].lower()
-        if file_ext not in ['.docx', '.hwp', '.doc']:
+        if file_ext not in ['.docx', '.doc']:
             logger.warning(f"지원하지 않는 파일 형식 - filename: {file.filename}, ext: {file_ext}")
             raise HTTPException(
                 status_code=400,
-                detail="지원하지 않는 파일 형식입니다. .docx 또는 .hwp 파일만 업로드 가능합니다."
+                detail="지원하지 않는 파일 형식입니다. .doc 또는 .docx 파일만 업로드 가능합니다."
             )
 
         # 고유 ID 생성
@@ -87,25 +58,20 @@ async def upload_template(
             "original_filename": file.filename,
             "file_path": file_path,
             "file_type": file_ext,
-            "status": "uploaded",
-            "created_at": datetime.now().isoformat(),
-            "analysis_result": None
+            "status": "ready",
+            "created_at": datetime.now().isoformat()
         }
 
         templates_db[template_id] = template_info
         logger.info(f"템플릿 정보 저장 완료 - template_id: {template_id}")
-
-        # 백그라운드에서 문서 분석 시작
-        background_tasks.add_task(analyze_template_background, template_id, file_path, file_ext)
-        logger.info(f"백그라운드 분석 작업 추가 - template_id: {template_id}")
 
         return {
             "success": True,
             "data": {
                 "template_id": template_id,
                 "name": template_info["name"],
-                "status": "uploaded",
-                "message": "파일이 성공적으로 업로드되었습니다. 분석이 시작됩니다."
+                "status": "ready",
+                "message": "파일이 성공적으로 업로드되었습니다. HWP로 변환할 수 있습니다."
             }
         }
 
@@ -124,8 +90,7 @@ async def list_templates():
             "name": template["name"],
             "description": template["description"],
             "status": template["status"],
-            "created_at": template["created_at"],
-            "has_analysis": template.get("analysis_result") is not None
+            "created_at": template["created_at"]
         }
         for template in templates_db.values()
     ]

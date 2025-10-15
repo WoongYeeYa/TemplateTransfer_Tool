@@ -1,22 +1,23 @@
 # Template Management System
 
-워드/한글 파일 양식 자동화 시스템
+워드 파일을 HWP 파일로 변환하는 시스템
 
 ## 주요 기능
 
 ### ✅ 구현 완료
-- **파일 업로드**: 워드(.docx) 파일 드래그 앤 드롭 업로드
-- **자동 분석**: 문서 구조 자동 분석 (문단, 표, 필드 추출)
+- **파일 업로드**: 워드(.doc, .docx) 파일 드래그 앤 드롭 업로드
+- **직접 변환**: 문서 분석 없이 원본 포맷을 그대로 HWP로 변환
 - **템플릿 관리**: 템플릿 목록 조회, 삭제
-- **HWP 생성**: 템플릿 기반 HWP 파일 생성 (기본 구현)
+- **HWP 파일 생성**: 한글 COM API를 사용한 실제 HWP 5.0 파일 생성
+- **한글 2018 호환**: 한글 2018에서 완벽하게 열리는 HWP 파일 생성
+- **포맷 유지**: 표, 서식, 레이아웃 등 모든 문서 요소 완벽 보존
 - **다크 테마 UI**: GitHub 스타일의 세련된 다크 테마
-- **데이터베이스**: SQLite 기본 지원 (PostgreSQL 전환 가능)
+- **간편한 사용**: 업로드 → 변환 → 다운로드 3단계로 완료
 
 ### 🚧 향후 개발 예정
-- **HWPX MCP 통합**: 실제 HWP 파일 생성 기능 완성
-- **HWP 파일 분석**: hwpx MCP를 사용한 한글 파일 분석
-- **AI 필드 인식**: 더 정교한 필드 자동 인식
 - **사용자 인증**: 로그인/회원가입 기능
+- **변환 이력**: 변환 기록 관리
+- **배치 변환**: 여러 파일 동시 변환
 
 ## 시스템 구조
 
@@ -29,8 +30,7 @@ template_management/
 │   │   │   ├── templates.py   # 템플릿 관리 API
 │   │   │   └── hwp.py         # HWP 생성/다운로드 API
 │   │   ├── services/          # 비즈니스 로직
-│   │   │   ├── document_analyzer.py  # 문서 분석 서비스
-│   │   │   └── hwp_generator.py      # HWP 생성 서비스
+│   │   │   └── doc_to_hwp_converter.py  # DOC → HWP 직접 변환 서비스
 │   │   ├── models/            # 데이터베이스 모델
 │   │   │   └── template.py    # Template 모델
 │   │   └── core/              # 핵심 설정
@@ -110,34 +110,36 @@ npm run dev
 
 ### 1. 템플릿 업로드
 1. "템플릿 업로드" 탭 클릭
-2. Word 파일(.docx)을 드래그 앤 드롭 또는 클릭하여 선택
-3. 파일이 자동으로 업로드되고 분석됩니다
+2. Word 파일(.doc 또는 .docx)을 드래그 앤 드롭 또는 클릭하여 선택
+3. 파일이 자동으로 업로드됩니다
 
 ### 2. 템플릿 목록 확인
 1. "템플릿 목록" 탭 클릭
 2. 업로드된 템플릿 카드 형식으로 확인
-3. 분석 상태 확인 (uploaded, analyzing, analyzed)
+3. 상태 확인: "변환 가능" 표시
 
-### 3. HWP 파일 생성
+### 3. HWP 파일 변환 및 다운로드
 1. 템플릿 카드에서 "사용하기" 버튼 클릭
-2. 원하는 파일 제목 입력 (선택사항, 기본값: 템플릿 이름)
+2. 원하는 파일 이름 입력 (선택사항, 기본값: 템플릿 이름)
 3. "HWP 파일 생성" 버튼 클릭
-4. 파일이 자동으로 다운로드됩니다
+4. 변환된 HWP 파일이 자동으로 다운로드됩니다
+
+**중요**: 변환된 HWP 파일은 원본 문서의 모든 내용, 표, 서식, 레이아웃을 그대로 유지합니다.
 
 ## API 엔드포인트
 
 ### 템플릿 관리
 
 #### POST /api/templates/upload
-템플릿 파일 업로드 및 분석 시작
-- **파일 형식**: .docx, .hwp, .doc
-- **자동 분석**: 백그라운드에서 문서 분석 수행
+템플릿 파일 업로드
+- **파일 형식**: .doc, .docx
+- **처리**: 파일 저장 후 즉시 변환 가능
 
 #### GET /api/templates/
 템플릿 목록 조회
 
 #### GET /api/templates/{template_id}
-특정 템플릿 상세 정보 및 분석 결과 조회
+특정 템플릿 상세 정보 조회
 
 #### DELETE /api/templates/{template_id}
 템플릿 삭제
@@ -145,13 +147,15 @@ npm run dev
 ### HWP 생성
 
 #### POST /api/hwp/generate
-HWP 파일 생성
+DOC/DOCX 파일을 HWP로 직접 변환
 ```json
 {
   "template_id": "uuid",
   "filename": "파일명"
 }
 ```
+- 원본 파일의 모든 내용을 HWP로 변환
+- 표, 서식, 레이아웃 완벽 보존
 
 #### GET /api/hwp/download/{filename}
 생성된 HWP 파일 다운로드
@@ -185,8 +189,8 @@ pip install -r requirements.txt
 
 ### 백엔드
 - **FastAPI**: Python 웹 프레임워크
-- **SQLAlchemy**: ORM (SQLite/PostgreSQL)
-- **python-docx**: Word 문서 분석
+- **pywin32**: Windows COM API (한글 제어)
+- **한글 COM API**: DOC/DOCX → HWP 변환
 - **Uvicorn**: ASGI 서버
 
 ### 프론트엔드
@@ -196,30 +200,40 @@ pip install -r requirements.txt
 
 ## 프로젝트 특징
 
-### 1. 단순하고 직관적인 UI
-- 불필요한 입력 필드 제거
+### 1. 단순하고 빠른 변환
+- 문서 분석 없이 직접 변환
+- 원본 포맷 100% 보존
+- 빠른 변환 속도
+
+### 2. 직관적인 UI
+- 업로드 → 변환 → 다운로드 3단계
 - 파일 이름 자동 사용
 - 드래그 앤 드롭 지원
 
-### 2. 자동화된 분석
-- 파일 업로드 시 자동으로 분석 시작
-- 백그라운드 작업으로 사용자 대기 시간 최소화
-
-### 3. 확장 가능한 구조
-- MCP 서버 통합 준비
-- 데이터베이스 쉽게 전환 가능 (SQLite ↔ PostgreSQL)
+### 3. 안정적인 기술 스택
+- 한글 COM API로 완벽한 호환성
+- HWP 5.0 형식 (한글 2018 지원)
 - 모듈화된 서비스 구조
 
-## HWPX MCP 통합 (준비 중)
+## 기술 상세
 
-현재 HWP 생성 기능은 기본 구현되어 있으며, HWPX MCP 서버 통합을 통해 실제 HWP 파일 생성이 가능합니다.
+### DOC/DOCX → HWP 변환 원리
+1. **한글 COM API 활용**: Windows COM을 통해 한글 프로그램을 프로그래밍 방식으로 제어
+2. **직접 변환**: 한글 프로그램이 Word 파일을 직접 열고 HWP로 저장
+3. **포맷 보존**: 한글 프로그램의 내장 변환 기능 사용으로 완벽한 호환성 보장
+4. **HWP 5.0 형식**: 한글 2018과 호환되는 형식으로 저장
 
-### 통합 예정 MCP 도구
-- `mcp__hwpx__make_blank`: 빈 HWP 파일 생성
-- `mcp__hwpx__add_paragraph`: 문단 추가
-- `mcp__hwpx__add_table`: 표 추가
-- `mcp__hwpx__save`: 파일 저장
-- `mcp__hwpx__read_text`: HWP 파일 읽기
+### 핵심 코드 (backend/app/services/doc_to_hwp_converter.py)
+```python
+# 한글 COM API 초기화
+self.hwp = win32com.client.gencache.EnsureDispatch("HWPFrame.HwpObject")
+
+# Word 파일 열기
+self.hwp.Open(abs_source_path, "")
+
+# HWP 형식으로 저장
+self.hwp.SaveAs(absolute_output_path, "HWP")
+```
 
 ## 문제 해결
 
@@ -238,21 +252,27 @@ start-backend.bat
 ```
 
 ### 파일 업로드 오류
-- 파일 형식 확인 (.docx, .hwp, .doc만 지원)
+- 파일 형식 확인 (.doc, .docx만 지원)
 - 백엔드 서버 실행 확인
 - CORS 설정 확인 (backend/app/main.py)
 
+### 변환 오류
+- 한글 프로그램이 설치되어 있는지 확인
+- 한글 프로그램이 다른 곳에서 실행 중이 아닌지 확인
+- 원본 Word 파일이 손상되지 않았는지 확인
+
+## 시스템 요구사항
+
+- **운영체제**: Windows (한글 COM API 필요)
+- **한글 프로그램**: 한글 2018 이상 설치 필수
+- **Python**: 3.8 이상
+- **Node.js**: 16 이상
+
 ## 개발 가이드
 
-### 새로운 MCP 도구 추가
-1. `backend/app/services/`에 새 서비스 파일 생성
-2. MCP 도구 호출 로직 구현
-3. API 엔드포인트에서 서비스 호출
-
-### 데이터베이스 모델 수정
-1. `backend/app/models/`에서 모델 수정
-2. Alembic 마이그레이션 생성
-3. 마이그레이션 적용
+### 변환 로직 수정
+변환 로직은 `backend/app/services/doc_to_hwp_converter.py`에 구현되어 있습니다.
+한글 COM API의 다양한 메서드를 활용하여 변환 옵션을 추가할 수 있습니다.
 
 ## 라이선스
 MIT

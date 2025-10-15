@@ -104,8 +104,8 @@
         <div class="template-card">
           <div class="card-header">
             <h3>{template.name}</h3>
-            <span class="status" class:uploaded={template.status === 'uploaded'}>
-              {template.status}
+            <span class="status" class:ready={template.status === 'ready'}>
+              {template.status === 'ready' ? '변환 가능' : template.status}
             </span>
           </div>
 
@@ -255,7 +255,7 @@
     text-transform: uppercase;
   }
 
-  .status.uploaded {
+  .status.ready {
     background: rgba(63, 185, 80, 0.1);
     color: #3fb950;
   }
