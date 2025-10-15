@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(mkdir:*)",
+      "Bash(python:*)",
+      "Bash(venv/Scripts/pip install:*)",
+      "Bash(curl:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(venv/Scripts/python:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
