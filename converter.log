@@ -1,0 +1,258 @@
+2025-10-21 11:13:07,753 - hwp_converter - INFO - 한글 설치 확인: 10, 0, 0, 5060
+2025-10-21 11:13:07,810 - hwp_converter - INFO - 변환 요청: test_complex_table.docx -> test_complex_table.hwp
+2025-10-21 11:13:07,812 - hwp_converter - INFO - ======================================================================
+2025-10-21 11:13:07,813 - hwp_converter - INFO - 한글 2018 COM API 수동 변환 시작
+2025-10-21 11:13:07,813 - hwp_converter - INFO - ======================================================================
+2025-10-21 11:13:11,502 - hwp_converter - INFO - 한글 버전: 10, 0, 0, 5060
+2025-10-21 11:13:11,502 - hwp_converter - INFO - 입력: C:\workspace\Claude_Code_Vibe_Coding2\Claude_Code_Vibe_Coding\test_complex_table.docx
+2025-10-21 11:13:11,502 - hwp_converter - INFO - 출력: C:\workspace\Claude_Code_Vibe_Coding2\Claude_Code_Vibe_Coding\test_complex_table.hwp
+2025-10-21 11:13:11,504 - hwp_converter - INFO - 기존 HWP 파일 삭제 완료
+2025-10-21 11:13:11,504 - hwp_converter - INFO - DOCX 파일 로드 중...
+2025-10-21 11:13:11,522 - hwp_converter - INFO - 문단 수: 7, 표 수: 3
+2025-10-21 11:13:11,522 - hwp_converter - INFO - 빈 HWP 문서 생성...
+2025-10-21 11:13:12,071 - hwp_converter - INFO - 본문 변환 시작...
+2025-10-21 11:13:12,071 - hwp_converter - INFO - 본문 요소 11개 변환 시작
+2025-10-21 11:13:12,072 - hwp_converter - DEBUG - [1/11] 문단 변환: 복잡한 표 변환 테스트...
+2025-10-21 11:13:12,093 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:12,122 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:12,219 - hwp_converter - DEBUG - [2/11] 문단 변환: ...
+2025-10-21 11:13:12,220 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:12,246 - hwp_converter - DEBUG - [3/11] 문단 변환: 1. 셀 병합 + 배경색 + 정렬 테스트...
+2025-10-21 11:13:12,251 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:12,271 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:12,348 - hwp_converter - DEBUG - [4/11] 표 변환
+2025-10-21 11:13:12,348 - hwp_converter - INFO - 표 변환 시작: 5행 x 5열
+2025-10-21 11:13:12,349 - hwp_converter - DEBUG - 병합 감지: (0,0) ~ (0,4)
+2025-10-21 11:13:12,349 - hwp_converter - DEBUG - 병합 감지: (0,1) ~ (0,5)
+2025-10-21 11:13:12,350 - hwp_converter - DEBUG - 병합 감지: (0,2) ~ (0,6)
+2025-10-21 11:13:12,350 - hwp_converter - DEBUG - 병합 감지: (0,3) ~ (0,7)
+2025-10-21 11:13:12,350 - hwp_converter - DEBUG - 병합 감지: (0,4) ~ (0,8)
+2025-10-21 11:13:12,350 - hwp_converter - INFO - 병합 정보: 5개 병합 영역
+2025-10-21 11:13:12,373 - hwp_converter - INFO - 표 생성: 5행 x 5열
+2025-10-21 11:13:12,570 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:12,599 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:12,675 - hwp_converter - DEBUG - 셀 (0, 0) 내용 입력 완료
+2025-10-21 11:13:12,699 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:12,730 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:12,811 - hwp_converter - DEBUG - 셀 (0, 1) 내용 입력 완료
+2025-10-21 11:13:12,824 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:12,853 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:12,949 - hwp_converter - DEBUG - 셀 (0, 2) 내용 입력 완료
+2025-10-21 11:13:12,964 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:12,994 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:13,082 - hwp_converter - DEBUG - 셀 (0, 3) 내용 입력 완료
+2025-10-21 11:13:13,097 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,131 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:13,215 - hwp_converter - DEBUG - 셀 (0, 4) 내용 입력 완료
+2025-10-21 11:13:13,234 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,275 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:13,389 - hwp_converter - DEBUG - 셀 (1, 0) 내용 입력 완료
+2025-10-21 11:13:13,404 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,443 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:13,553 - hwp_converter - DEBUG - 셀 (1, 1) 내용 입력 완료
+2025-10-21 11:13:13,566 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,601 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:13,678 - hwp_converter - DEBUG - 셀 (1, 2) 내용 입력 완료
+2025-10-21 11:13:13,691 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,723 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:13,799 - hwp_converter - DEBUG - 셀 (1, 3) 내용 입력 완료
+2025-10-21 11:13:13,812 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:13,844 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:13,920 - hwp_converter - DEBUG - 셀 (1, 4) 내용 입력 완료
+2025-10-21 11:13:13,939 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:13,972 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=11.0
+2025-10-21 11:13:14,048 - hwp_converter - DEBUG - 셀 (2, 0) 내용 입력 완료
+2025-10-21 11:13:14,061 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:14,094 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=11.0
+2025-10-21 11:13:14,171 - hwp_converter - DEBUG - 셀 (2, 1) 내용 입력 완료
+2025-10-21 11:13:14,184 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignRight
+2025-10-21 11:13:14,217 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=11.0
+2025-10-21 11:13:14,316 - hwp_converter - DEBUG - 셀 (2, 2) 내용 입력 완료
+2025-10-21 11:13:14,334 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:14,375 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=11.0
+2025-10-21 11:13:14,460 - hwp_converter - DEBUG - 셀 (2, 3) 내용 입력 완료
+2025-10-21 11:13:14,473 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignJustify
+2025-10-21 11:13:14,493 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=11.0
+2025-10-21 11:13:14,569 - hwp_converter - DEBUG - 셀 (2, 4) 내용 입력 완료
+2025-10-21 11:13:14,582 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:14,616 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:14,699 - hwp_converter - DEBUG - 셀 (3, 0) 내용 입력 완료
+2025-10-21 11:13:14,713 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:14,748 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=8.0
+2025-10-21 11:13:14,844 - hwp_converter - DEBUG - 셀 (3, 1) 내용 입력 완료
+2025-10-21 11:13:14,854 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:14,895 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=8.0
+2025-10-21 11:13:14,977 - hwp_converter - DEBUG - 셀 (3, 2) 내용 입력 완료
+2025-10-21 11:13:14,992 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:15,026 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=8.0
+2025-10-21 11:13:15,103 - hwp_converter - DEBUG - 셀 (3, 3) 내용 입력 완료
+2025-10-21 11:13:15,117 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:15,152 - hwp_converter - DEBUG - 글자 서식 적용: bold=None, italic=None, size=8.0
+2025-10-21 11:13:15,240 - hwp_converter - DEBUG - 셀 (3, 4) 내용 입력 완료
+2025-10-21 11:13:15,252 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:15,286 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:15,388 - hwp_converter - DEBUG - 셀 (4, 0) 내용 입력 완료
+2025-10-21 11:13:15,406 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:15,447 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:15,530 - hwp_converter - DEBUG - 셀 (4, 1) 내용 입력 완료
+2025-10-21 11:13:15,543 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:15,577 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:15,669 - hwp_converter - DEBUG - 셀 (4, 2) 내용 입력 완료
+2025-10-21 11:13:15,683 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:15,718 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:15,799 - hwp_converter - DEBUG - 셀 (4, 3) 내용 입력 완료
+2025-10-21 11:13:15,811 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:15,847 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:15,926 - hwp_converter - DEBUG - 셀 (4, 4) 내용 입력 완료
+2025-10-21 11:13:15,926 - hwp_converter - INFO - 셀 병합 시작: 5개 병합 영역
+2025-10-21 11:13:15,935 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:15,936 - hwp_converter - DEBUG - 병합 완료: (0,0) ~ (0,4)
+2025-10-21 11:13:15,945 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:15,946 - hwp_converter - DEBUG - 병합 완료: (0,1) ~ (0,5)
+2025-10-21 11:13:15,955 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:15,956 - hwp_converter - DEBUG - 병합 완료: (0,2) ~ (0,6)
+2025-10-21 11:13:15,963 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:15,964 - hwp_converter - DEBUG - 병합 완료: (0,3) ~ (0,7)
+2025-10-21 11:13:15,973 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:15,974 - hwp_converter - DEBUG - 병합 완료: (0,4) ~ (0,8)
+2025-10-21 11:13:16,019 - hwp_converter - INFO - 표 변환 완료
+2025-10-21 11:13:16,019 - hwp_converter - DEBUG - [5/11] 문단 변환: ...
+2025-10-21 11:13:16,020 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:16,068 - hwp_converter - DEBUG - [6/11] 문단 변환: 2. 복잡한 셀 병합 패턴...
+2025-10-21 11:13:16,072 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:16,093 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:16,211 - hwp_converter - DEBUG - [7/11] 표 변환
+2025-10-21 11:13:16,211 - hwp_converter - INFO - 표 변환 시작: 4행 x 4열
+2025-10-21 11:13:16,212 - hwp_converter - DEBUG - 병합 감지: (0,0) ~ (0,1)
+2025-10-21 11:13:16,212 - hwp_converter - DEBUG - 병합 감지: (0,1) ~ (0,2)
+2025-10-21 11:13:16,213 - hwp_converter - DEBUG - 병합 감지: (2,2) ~ (2,3)
+2025-10-21 11:13:16,213 - hwp_converter - DEBUG - 병합 감지: (2,3) ~ (2,4)
+2025-10-21 11:13:16,213 - hwp_converter - DEBUG - 병합 감지: (3,2) ~ (3,3)
+2025-10-21 11:13:16,213 - hwp_converter - DEBUG - 병합 감지: (3,3) ~ (3,4)
+2025-10-21 11:13:16,213 - hwp_converter - INFO - 병합 정보: 6개 병합 영역
+2025-10-21 11:13:16,238 - hwp_converter - INFO - 표 생성: 4행 x 4열
+2025-10-21 11:13:16,274 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:16,307 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:16,411 - hwp_converter - DEBUG - 셀 (0, 0) 내용 입력 완료
+2025-10-21 11:13:16,434 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:16,477 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:16,594 - hwp_converter - DEBUG - 셀 (0, 1) 내용 입력 완료
+2025-10-21 11:13:16,626 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:16,732 - hwp_converter - DEBUG - 셀 (0, 2) 내용 입력 완료
+2025-10-21 11:13:16,750 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:16,835 - hwp_converter - DEBUG - 셀 (0, 3) 내용 입력 완료
+2025-10-21 11:13:16,848 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:16,885 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:16,980 - hwp_converter - DEBUG - 셀 (1, 0) 내용 입력 완료
+2025-10-21 11:13:17,006 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:17,094 - hwp_converter - DEBUG - 셀 (1, 1) 내용 입력 완료
+2025-10-21 11:13:17,107 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:17,186 - hwp_converter - DEBUG - 셀 (1, 2) 내용 입력 완료
+2025-10-21 11:13:17,198 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:17,276 - hwp_converter - DEBUG - 셀 (1, 3) 내용 입력 완료
+2025-10-21 11:13:17,290 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:17,330 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:17,442 - hwp_converter - DEBUG - 셀 (2, 0) 내용 입력 완료
+2025-10-21 11:13:17,469 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:17,552 - hwp_converter - DEBUG - 셀 (2, 1) 내용 입력 완료
+2025-10-21 11:13:17,565 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:17,605 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:17,705 - hwp_converter - DEBUG - 셀 (2, 2) 내용 입력 완료
+2025-10-21 11:13:17,724 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:17,766 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:17,870 - hwp_converter - DEBUG - 셀 (2, 3) 내용 입력 완료
+2025-10-21 11:13:17,894 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:17,978 - hwp_converter - DEBUG - 셀 (3, 0) 내용 입력 완료
+2025-10-21 11:13:17,991 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:18,067 - hwp_converter - DEBUG - 셀 (3, 1) 내용 입력 완료
+2025-10-21 11:13:18,076 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:18,117 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:18,220 - hwp_converter - DEBUG - 셀 (3, 2) 내용 입력 완료
+2025-10-21 11:13:18,241 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:18,285 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:18,413 - hwp_converter - DEBUG - 셀 (3, 3) 내용 입력 완료
+2025-10-21 11:13:18,413 - hwp_converter - INFO - 셀 병합 시작: 6개 병합 영역
+2025-10-21 11:13:18,426 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,427 - hwp_converter - DEBUG - 병합 완료: (0,0) ~ (0,1)
+2025-10-21 11:13:18,439 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,440 - hwp_converter - DEBUG - 병합 완료: (0,1) ~ (0,2)
+2025-10-21 11:13:18,454 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,455 - hwp_converter - DEBUG - 병합 완료: (2,2) ~ (2,3)
+2025-10-21 11:13:18,469 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,470 - hwp_converter - DEBUG - 병합 완료: (2,3) ~ (2,4)
+2025-10-21 11:13:18,480 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,481 - hwp_converter - DEBUG - 병합 완료: (3,2) ~ (3,3)
+2025-10-21 11:13:18,494 - hwp_converter - WARNING - 셀 병합 실패: <unknown>.HTableCellBlock
+2025-10-21 11:13:18,495 - hwp_converter - DEBUG - 병합 완료: (3,3) ~ (3,4)
+2025-10-21 11:13:18,534 - hwp_converter - INFO - 표 변환 완료
+2025-10-21 11:13:18,535 - hwp_converter - DEBUG - [8/11] 문단 변환: ...
+2025-10-21 11:13:18,535 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:18,598 - hwp_converter - DEBUG - [9/11] 문단 변환: 3. 다양한 폰트 크기와 색상...
+2025-10-21 11:13:18,602 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignLeft
+2025-10-21 11:13:18,620 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:18,766 - hwp_converter - DEBUG - [10/11] 표 변환
+2025-10-21 11:13:18,766 - hwp_converter - INFO - 표 변환 시작: 3행 x 6열
+2025-10-21 11:13:18,767 - hwp_converter - INFO - 병합 정보: 0개 병합 영역
+2025-10-21 11:13:18,788 - hwp_converter - INFO - 표 생성: 3행 x 6열
+2025-10-21 11:13:18,827 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:18,866 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=8.0
+2025-10-21 11:13:18,950 - hwp_converter - DEBUG - 셀 (0, 0) 내용 입력 완료
+2025-10-21 11:13:18,961 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:19,006 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=10.0
+2025-10-21 11:13:19,118 - hwp_converter - DEBUG - 셀 (0, 1) 내용 입력 완료
+2025-10-21 11:13:19,133 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:19,178 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:19,319 - hwp_converter - DEBUG - 셀 (0, 2) 내용 입력 완료
+2025-10-21 11:13:19,335 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:19,381 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=14.0
+2025-10-21 11:13:19,524 - hwp_converter - DEBUG - 셀 (0, 3) 내용 입력 완료
+2025-10-21 11:13:19,548 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:19,597 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=16.0
+2025-10-21 11:13:19,712 - hwp_converter - DEBUG - 셀 (0, 4) 내용 입력 완료
+2025-10-21 11:13:19,729 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:19,780 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=18.0
+2025-10-21 11:13:19,954 - hwp_converter - DEBUG - 셀 (0, 5) 내용 입력 완료
+2025-10-21 11:13:19,981 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:20,042 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:20,155 - hwp_converter - DEBUG - 셀 (1, 0) 내용 입력 완료
+2025-10-21 11:13:20,171 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:20,219 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:20,354 - hwp_converter - DEBUG - 셀 (1, 1) 내용 입력 완료
+2025-10-21 11:13:20,371 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:20,420 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:20,563 - hwp_converter - DEBUG - 셀 (1, 2) 내용 입력 완료
+2025-10-21 11:13:20,597 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:20,665 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:20,794 - hwp_converter - DEBUG - 셀 (1, 3) 내용 입력 완료
+2025-10-21 11:13:20,816 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:20,889 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:21,078 - hwp_converter - DEBUG - 셀 (1, 4) 내용 입력 완료
+2025-10-21 11:13:21,104 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:21,160 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=12.0
+2025-10-21 11:13:21,289 - hwp_converter - DEBUG - 셀 (1, 5) 내용 입력 완료
+2025-10-21 11:13:21,307 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:21,357 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:21,493 - hwp_converter - DEBUG - 셀 (2, 0) 내용 입력 완료
+2025-10-21 11:13:21,529 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:21,610 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:21,744 - hwp_converter - DEBUG - 셀 (2, 1) 내용 입력 완료
+2025-10-21 11:13:21,760 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:21,806 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:21,914 - hwp_converter - DEBUG - 셀 (2, 2) 내용 입력 완료
+2025-10-21 11:13:21,930 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:21,976 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:22,085 - hwp_converter - DEBUG - 셀 (2, 3) 내용 입력 완료
+2025-10-21 11:13:22,103 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:22,151 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:22,260 - hwp_converter - DEBUG - 셀 (2, 4) 내용 입력 완료
+2025-10-21 11:13:22,276 - hwp_converter - DEBUG - 정렬 적용: ParagraphShapeAlignCenter
+2025-10-21 11:13:22,321 - hwp_converter - DEBUG - 글자 서식 적용: bold=True, italic=None, size=None
+2025-10-21 11:13:22,510 - hwp_converter - DEBUG - 셀 (2, 5) 내용 입력 완료
+2025-10-21 11:13:22,603 - hwp_converter - INFO - 표 변환 완료
+2025-10-21 11:13:22,604 - hwp_converter - INFO - 진행중... 10/11
+2025-10-21 11:13:22,604 - hwp_converter - INFO - 본문 변환 완료
+2025-10-21 11:13:22,604 - hwp_converter - INFO - HWP 파일 저장 중...
+2025-10-21 11:13:22,789 - hwp_converter - INFO - ✓ 변환 성공! 파일 크기: 49,152 bytes
+2025-10-21 11:13:22,789 - hwp_converter - INFO - ✓ 저장 위치: C:\workspace\Claude_Code_Vibe_Coding2\Claude_Code_Vibe_Coding\test_complex_table.hwp
+2025-10-21 11:13:22,805 - hwp_converter - INFO - 한글 프로세스 종료
+2025-10-21 11:13:23,094 - hwp_converter - INFO - ======================================================================

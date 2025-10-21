@@ -1,0 +1,214 @@
+# Python 레거시 버전 - 파일 목록
+
+## 📁 폴더 구조
+
+legacy-python/
+├── backend/                      # Python 백엔드
+│   ├── __pycache__/             # Python 캐시
+│   ├── main.py                  # FastAPI 서버
+│   ├── hwp_converter.py         # COM API 변환 로직
+│   ├── hwpx_writer.py           # HWPX 쓰기 (미사용)
+│   ├── requirements.txt         # Python 의존성
+│   └── converter.log            # 변환 로그
+│
+├── frontend/                    # 프론트엔드 (복사본)
+│   ├── index.html              # 메인 페이지
+│   ├── style.css               # 스타일시트
+│   └── app.js                  # JavaScript
+│
+├── start.bat                    # 통합 실행 메뉴
+├── start_server.bat             # 서버 시작
+├── stop_server.bat              # 서버 종료
+├── install.bat                  # 의존성 설치
+├── open_browser.bat             # 브라우저 열기
+│
+├── test_conversion.py           # 서식 테스트 (성공)
+├── create_complex_table.py      # 복잡한 표 생성
+├── test_table_conversion.py     # 표 변환 테스트
+├── create_simple_table.py       # 간단한 표 생성
+├── test_simple_table.py         # 간단한 표 테스트 (성공)
+├── create_test_docx.py          # 테스트 DOCX 생성
+├── check_docx_format.py         # DOCX 형식 확인
+├── hwpx_converter_new.py        # HWPX 변환 (미완성)
+│
+├── test_formatting.docx         # 서식 테스트 파일 ✅
+├── test_formatting.hwp          # 서식 테스트 결과 ✅
+├── test_complex_table.docx      # 복잡한 표 테스트 파일 ❌
+├── test_simple_table.docx       # 간단한 표 테스트 파일 ✅
+├── test_simple_table.hwp        # 간단한 표 테스트 결과 ✅
+│
+├── output.log                   # 서버 로그
+├── converter.log                # 변환 로그
+│
+├── USAGE.md                     # 사용법
+├── 시작하기.txt                  # 빠른 시작
+├── README.md                    # 이 버전 설명
+└── 파일_목록.txt                 # 이 파일
+
+---
+
+## 📊 파일 설명
+
+### 핵심 코드 (backend/)
+
+**main.py** (410줄)
+- FastAPI 서버
+- REST API 엔드포인트
+- 파일 업로드/다운로드
+- 템플릿 관리
+
+**hwp_converter.py** (크기 큼)
+- COM API 기반 변환 로직
+- 한컴오피스 자동화
+- 텍스트 서식 처리
+- 표 변환 (셀 병합 실패)
+
+**requirements.txt**
+- fastapi
+- uvicorn
+- python-docx
+- pywin32
+- lxml
+
+### 실행 스크립트
+
+**start.bat**
+- 통합 메뉴 시스템
+- 서버 시작/종료
+- 브라우저 자동 열기
+
+**start_server.bat**
+- 빠른 서버 시작
+- 백그라운드 실행
+
+**stop_server.bat**
+- 실행 중인 서버 종료
+- 프로세스 정리
+
+**install.bat**
+- Python 의존성 설치
+- pip install -r requirements.txt
+
+### 테스트 스크립트
+
+**test_conversion.py** ✅ 성공
+- 텍스트 색상 테스트
+- 문단 정렬 테스트
+- 들여쓰기/내어쓰기 테스트
+- 결과: test_formatting.hwp (완벽)
+
+**test_simple_table.py** ✅ 성공
+- 간단한 3x3 표
+- 셀 병합 없음
+- 결과: test_simple_table.hwp (정상)
+
+**test_table_conversion.py** ❌ 실패
+- 복잡한 표 (셀 병합)
+- 결과: 표 레이아웃 완전 깨짐
+
+**create_complex_table.py**
+- 5x5 표 생성
+- 셀 병합 (가로, 세로, 블록)
+- 셀 배경색
+- 폰트 크기 및 색상
+
+### 프론트엔드 (frontend/)
+
+**index.html**
+- 다크 테마 UI
+- 파일 업로드
+- 드래그 앤 드롭
+- 변환 진행 표시
+
+**style.css**
+- 다크 테마 스타일
+- 반응형 디자인
+- 애니메이션
+
+**app.js**
+- REST API 통신
+- 파일 업로드 로직
+- 다운로드 처리
+
+### 테스트 파일
+
+**성공한 변환**
+- test_formatting.docx → test_formatting.hwp
+  - 빨강, 녹색, 파랑, 보라, 주황 텍스트
+  - 좌/중/우/양쪽 정렬
+  - 들여쓰기, 내어쓰기, 복합 들여쓰기
+
+- test_simple_table.docx → test_simple_table.hwp
+  - 3x3 간단한 표
+  - 텍스트만
+
+**실패한 변환**
+- test_complex_table.docx
+  - 5칸 가로 병합 ❌
+  - 2칸 세로 병합 ❌
+  - 2x2 블록 병합 ❌
+  - 셀 배경색 ❌
+
+---
+
+## 🔧 의존성
+
+### Python 패키지 (requirements.txt)
+
+```
+fastapi>=0.104.1
+uvicorn>=0.24.0
+python-docx>=1.1.0
+pywin32>=306
+lxml>=4.9.3
+python-multipart>=0.0.6
+```
+
+### 시스템 요구사항
+
+- Windows OS
+- **Hancom Office 한글 2014+** (필수!)
+- Python 3.8+
+
+---
+
+## 📈 코드 통계
+
+### 전체 라인 수
+- main.py: ~410줄
+- hwp_converter.py: ~800줄 (추정)
+- 테스트 스크립트: ~500줄
+
+### 기능 구현 상태
+- ✅ 텍스트 변환: 100%
+- ✅ 간단한 표: 100%
+- ❌ 셀 병합: 0% (실패)
+- ❌ 셀 배경색: 0% (실패)
+- ✅ 텍스트 색상: 100%
+- ✅ 문단 정렬: 100%
+- ✅ 들여쓰기: 100%
+
+---
+
+## 🚀 새 버전으로 이동
+
+이 레거시 버전의 한계를 극복한 Java 버전:
+
+```bash
+cd ..
+빠른_시작.bat
+```
+
+**Java 버전 장점:**
+- ✅ 셀 병합 완벽 지원
+- ✅ Hancom Office 불필요
+- ✅ 크로스 플랫폼
+- ✅ 빠른 속도
+
+---
+
+## 📝 참고
+
+이 폴더는 레거시 버전 보관용입니다.
+
+새로운 개발은 `../backend-java/` 에서 진행됩니다.
